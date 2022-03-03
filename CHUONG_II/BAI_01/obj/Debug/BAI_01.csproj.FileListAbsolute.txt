@@ -1,0 +1,8 @@
+D:\CHUONG_II_KTLT_2\CHUONG_II_KTLT_II\BAI_01\bin\Debug\BAI_01.exe.config
+D:\CHUONG_II_KTLT_2\CHUONG_II_KTLT_II\BAI_01\bin\Debug\BAI_01.exe
+D:\CHUONG_II_KTLT_2\CHUONG_II_KTLT_II\BAI_01\bin\Debug\BAI_01.pdb
+D:\CHUONG_II_KTLT_2\CHUONG_II_KTLT_II\BAI_01\obj\Debug\BAI_01.csproj.AssemblyReference.cache
+D:\CHUONG_II_KTLT_2\CHUONG_II_KTLT_II\BAI_01\obj\Debug\BAI_01.csproj.SuggestedBindingRedirects.cache
+D:\CHUONG_II_KTLT_2\CHUONG_II_KTLT_II\BAI_01\obj\Debug\BAI_01.csproj.CoreCompileInputs.cache
+D:\CHUONG_II_KTLT_2\CHUONG_II_KTLT_II\BAI_01\obj\Debug\BAI_01.exe
+D:\CHUONG_II_KTLT_2\CHUONG_II_KTLT_II\BAI_01\obj\Debug\BAI_01.pdb

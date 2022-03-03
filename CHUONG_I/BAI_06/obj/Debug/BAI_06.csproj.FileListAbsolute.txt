@@ -1,0 +1,8 @@
+D:\KTLT_2\BAI_06\bin\Debug\BAI_06.exe.config
+D:\KTLT_2\BAI_06\bin\Debug\BAI_06.exe
+D:\KTLT_2\BAI_06\bin\Debug\BAI_06.pdb
+D:\KTLT_2\BAI_06\obj\Debug\BAI_06.csproj.AssemblyReference.cache
+D:\KTLT_2\BAI_06\obj\Debug\BAI_06.csproj.SuggestedBindingRedirects.cache
+D:\KTLT_2\BAI_06\obj\Debug\BAI_06.csproj.CoreCompileInputs.cache
+D:\KTLT_2\BAI_06\obj\Debug\BAI_06.exe
+D:\KTLT_2\BAI_06\obj\Debug\BAI_06.pdb

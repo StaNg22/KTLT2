@@ -1,0 +1,10 @@
+Các câu lệnh cần bt trong mảng c#:
+1/ Thay đổi kích thước:
+* Array.Resize(ref Ten_Mảng, Kich_Thuoc);
+2/ Copy mảng 
+* Array.Copy(mang_Nguon, vi_tri_bat_dau_cpoy, Mang_dc_Copy, vi_tri_dc_copy, so_GT_Copy);
+3/ Sắp xếp
+* Tăng dần: Array.Sort(Ten_mang);
+* Giảm dần: Array.Reverse(Tem_mang);
+4/ Restart các phần tử trong mảng:
+* Array.Clear(Ten_Mang,Chi_So_Bat_dau, so_luong_Pt);
