@@ -4,116 +4,71 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-
-namespace KTLT2_CHUONG_3
+namespace Struct
 {
     internal class Program
     {
-        struct ThongTinNhanVien
-        {
-            public string HoTen;
-            public DateTime NgaySinh;
-            public double LuongCoBan;
-            public double HeSoLuong;
-            public int MaSo;
-        }
+        
         static void Main(string[] args)
         {
             Console.OutputEncoding = Encoding.UTF8;
-            DateTime Present = DateTime.Now;
-            int NgayPhaiTra = 0;
-            int ThangPhaiTra = 0;
-            int NamPhaiTra = 0;
-
-            int NgayTra = 0;
-            int ThangTra = 0;
-            int NamTra = 0;
-
-            DateTime date1;
-            DateTime date2;
-
-            ThongTinNhanVien NV = new ThongTinNhanVien();
-            Console.WriteLine("Ngày hiện tại: {0}",Present.ToString("d"));
-            Console.WriteLine(Present.DayOfWeek);
-            Console.WriteLine("Hôm qua: {0}",Present.AddDays(-1).ToString("d"));
-            Console.WriteLine("Ngày mai: {0}", Present.AddDays(1).ToString("d"));
-
-            //Mượn
-            Console.WriteLine("Nhập vào ngày bạn phải trả sách:");
-            NgayPhaiTra = int.Parse(Console.ReadLine());
-
-            Console.WriteLine("Nhập vào tháng bạn phải trả sách:");
-            ThangPhaiTra = int.Parse(Console.ReadLine());
-
-            Console.WriteLine("Nhập vào năm bạn phải trả sách:");
-            NamPhaiTra = int.Parse(Console.ReadLine());
-
-            date1 = new DateTime(NamPhaiTra, ThangPhaiTra, NgayPhaiTra);
-            Console.WriteLine("=> Bạn phải trả sách vào ngày: {0}",date1.ToString("d"));
-
-            //Trả
-            Console.WriteLine("Nhập vào ngày bạn trả sách:");
-            NgayTra = int.Parse(Console.ReadLine());
-
-            Console.WriteLine("Nhập vào tháng bạn trả sách:");
-            ThangTra = int.Parse(Console.ReadLine());
-
-            Console.WriteLine("Nhập vào năm bạn trả sách:");
-            NamTra = int.Parse(Console.ReadLine());
-
-            date2 = new DateTime(NamTra, ThangTra, NgayTra);
-            Console.WriteLine("=> Bạn trả sách vào ngày: {0}",date2.ToString("d"));
-
-            //Số ngày trễ
-            TimeSpan date3 = date2 - date1;
-            
-            if (date3 <= TimeSpan.Zero)
+            GoiData[] Data;
+            int SoLuong = 0;
+            SoLuong = SLuong();
+            Console.WriteLine("NHẬP VÀO TỪNG GÓI");
+            Data = NhapDanhSach(SoLuong);
+            Console.WriteLine("CÁC GÓI VỪA NHẬP");
+            XuatDanhSach(Data);
+        }
+        static void XuatDanhSach(GoiData[] a)
+        {
+            for (int i = 0; i < a.Length; i++)
             {
-                Console.WriteLine("==> Bạn ko trả trễ sách.");
-            } 
-            else
-            {
-                Console.WriteLine("==> Bạn đã trả sách trễ {0} ngày.",date3.TotalDays);
+                Console.WriteLine("Số thứ tự thứ: {0}",i + 1);
+                XuatData(a[i]);
             }
-            Console.WriteLine("\n\nBT DANH SÁCH NHÂN VIÊN");
-            NhapThongTinNhanVien(out NV);
-            XuatThongTinNhanVien(NV);
         }
-        static void XuatThongTinNhanVien(ThongTinNhanVien NV)
+        static GoiData[] NhapDanhSach(int SoLuong)
         {
-            Console.WriteLine("Mã Số: {0}",NV.MaSo);
-            Console.WriteLine("Họ tên: {0}",NV.HoTen);
-            Console.WriteLine("Ngày sinh: {0}",NV.NgaySinh.ToString("d"));
-            Console.WriteLine("Lương cơ bản: {0}",NV.LuongCoBan);
-            Console.WriteLine("Hệ số lương: {0}",NV.HeSoLuong);
+            GoiData[] a = new GoiData[SoLuong];
+            for (int i = 0; i < a.Length; i++)
+            {
+                Console.WriteLine("Số thứ tự thứ {0}",i + 1);
+                NhapCacGoi(out a[i]);
+            }
+            return a;
         }
-        static void NhapThongTinNhanVien(out ThongTinNhanVien NV)
+        static int SLuong()
         {
-            int Day = 0;
-            int Month = 0;
-            int year = 0;
-            Console.WriteLine("Nhập Mã Số:");
-            NV.MaSo = int.Parse(Console.ReadLine());
-
-            Console.WriteLine("Nhập vào tên của nhân viên:");
-            NV.HoTen = Console.ReadLine();
-
-            Console.WriteLine("Nhập vào ngày sinh:");
-            Day = int.Parse(Console.ReadLine());
-
-            Console.WriteLine("Nhập vào tháng sinh:");
-            Month = int.Parse(Console.ReadLine());
-
-            Console.WriteLine("Nhập vào năm sinh:");
-            year = int.Parse(Console.ReadLine());
-
-            NV.NgaySinh = new DateTime(year, Month, Day);
-
-            Console.WriteLine("Nhập vào lương cơ bản:");
-            NV.LuongCoBan = int.Parse(Console.ReadLine());
-
-            Console.WriteLine("Nhập vào hệ số lương:");
-            NV.HeSoLuong = int.Parse(Console.ReadLine());
+            int n = 0;
+            Console.WriteLine("Nhập vào số lượng các gói data:");
+            n = int.Parse(Console.ReadLine());
+            return n;
+        }
+        static void XuatData(GoiData a)
+        {
+            Console.WriteLine("Tên gói: {0}",a.TenGoi);
+            Console.WriteLine("Chu kỳ gói: {0} ngày",a.ChuKyGoi);
+            Console.WriteLine("Giá gói: {0}K",a.GiaGoi);
+            Console.WriteLine("Vượt gói: {0}",a.VuotGoi);
+        }
+        static void NhapCacGoi(out GoiData Data)
+        {
+            Console.WriteLine("Nhập vào Tên gói cước:");
+            Data.TenGoi = Console.ReadLine();
+            Console.WriteLine("Nhập vào chu kỳ gói:");
+            Data.ChuKyGoi = int.Parse(Console.ReadLine());
+            Console.WriteLine("Nhập vào giá gói cước:");
+            Data.GiaGoi = int.Parse(Console.ReadLine());
+            Console.WriteLine("Gói cước này có vượt gói không?(0/1)");
+            Data.VuotGoi = int.Parse(Console.ReadLine());
+        }
+        struct GoiData
+        {
+            public string TenGoi;
+            public int ChuKyGoi;
+            public double GiaGoi;
+            public int VuotGoi;
         }
     }
 }
