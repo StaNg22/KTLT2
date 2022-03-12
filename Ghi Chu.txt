@@ -8,3 +8,42 @@ Các câu lệnh cần bt trong mảng c#:
 * Giảm dần: Array.Reverse(Tem_mang);
 4/ Restart các phần tử trong mảng:
 * Array.Clear(Ten_Mang,Chi_So_Bat_dau, so_luong_Pt);
+
+
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text.RegularExpressions;
+
+namespace Rextester
+{
+    public class Program
+    {
+        public static void Main(string[] args)
+        {
+            
+        }
+        static 
+        static void NhapDuLieu(ref Data Goi)
+        {
+            Console.WriteLine("Nhap vao ten goi: ");
+            Goi.TenGoi = Console.ReadLine();
+            
+            Console.WriteLine("Nhap vao toc do: ");
+            Goi.TocDo = int.Parse(Console.ReadLine());
+            
+            Console.WriteLine("Nhap vao gia goi cuoc: ");
+            Goi.GiaGoi = int.Parse(Console.ReadLine());
+            
+            Console.WriteLine("Nhap vao phi hoa mang: ");
+            Goi.PhiHoaMang = int.Parse(Console.ReadLine());
+        }
+        struct Data
+        {
+            public string TenGoi;
+            public int TocDo;
+            public int GiaGoi;
+            public int PhiHoaMang;
+        }
+    }
+}
